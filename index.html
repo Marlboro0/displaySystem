@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>深圳闻歌项目介绍</title>
+    <link href="https://cdn.bootcss.com/twitter-bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css"> -->
+    <!-- <script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script> -->
+    <!-- <script src="https://unpkg.com/element-ui/lib/index.js"></script> -->
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body >
+    <div id="index">
+    <!-- 导航条&轮播图 -->
+    <header>
+        <section class="top">
+            <div class="title">
+                <img src="http://www.wengegroup.com/img/logo/LOGO_new.png" alt="">
+                <section>
+                    <div>首页</div>
+                    <div class="btn-group">
+                        <button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="margin-top:12px">
+                            项目列表 <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" id="proList" >
+                            <li v-for="(data,index) in nameList" :key="index"><a :href="'./detail.html?'+data">{{data}}</a></li>
+                            <!-- <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li><a href="#">Separated link</a></li> -->
+                        </ul>
+                    </div>
+                </section>
+            </div>
+            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" style="width: 100%;height:500px;min-width: 1140px;">
+                    <ol class="carousel-indicators">
+                      <li data-target="#carousel-example-generic" data-slide-to="" class="active"></li>
+                      <li data-target="#carousel-example-generic" :data-slide-to="(index+1)" v-for="(item,index) in src.slice(1,src.length)" :key="index"></li>
+                    </ol>
+                  
+                    <div class="carousel-inner" role="listbox">
+                      <div class="item active">
+                        <img :src="src[0].src" alt="..." style="height:500px;width: 100%;">
+                    
+                      </div>
+                      <div class="item" v-for="(item,index) in src.slice(1,src.length)" :key="index">
+                        <img :src="item.src" alt="..." style="height:500px;width: 100%;">
+                    
+                      </div>
+                    </div>
+                    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                      <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                      <span class="sr-only">Next</span>
+                    </a>
+                  </div>
+        </section>
+    </header>
+    <!-- 主体 -->
+    <div class="body">
+        <section>
+        <div class="wrap_all">
+            <div class="wrap">
+                <div v-for="(item,index) in result" :key="index" @mouseover="display" @mouseleave="unDisplay">
+                    <!-- <div class="container">
+                        <img src="http://www.yuanyin.com/templates/anystage/content/images/icon-link@512px-white.svg" alt="">
+                        <span class="mask glyphicon glyphicon-paperclip">了解更多</span>
+                    </div> -->
+                    <h3>{{item.name}}</h3>
+                    <h4>{{item.name}}</h4>
+                    <img :src="item.ioc" alt="">
+                    <p>{{item.generalize}}</p>
+                    <a class="glyphicon glyphicon-paperclip" :href="'./detail.html?'+item.name"></a>
+                </div>
+            </div>
+        </div>
+        </section>
+    </div>
+    <!-- 底部 -->
+    <footer>
+        <div class="row footer_wrap">
+            <div class="col-md-2">
+                <img src="http://www.wengegroup.com/img/logo/LOGO_bai.png" alt="">
+                <span>全国服务热线：400 093 5556</span>
+                <!-- <img src="http://www.wengegroup.com/img/erweima.png" alt=""> -->
+            </div>
+            <div class="col-md-2">
+                <span>北京总部</span>
+                <span>电话：010-82552712</span>
+                <span>邮箱：sales@wengegroup.com</span>
+                <span>地址：北京市海淀区北四环西路9号银谷大厦0715</span>
+            </div>
+            <div class="col-md-2">
+                <span>深圳分公司 </span>
+                <span>电话：0755-23732804 </span>
+                <span>邮箱：sales-sz@wengegroup.com</span>
+                <span>地址：广东省深圳市龙岗区五和大道星河WORDE座1801</span>
+            </div>
+            <div class="col-md-2">
+                <span>西安分公司</span>
+                <span>电话：029-81325996</span>
+                <span>地址：西安市高新区天谷八路环普产业园</span>
+            </div>
+            <div class="col-md-3">
+                <img src="http://www.wengegroup.com/img/erweima.png" alt="" style="margin-left: 217px">
+            </div>
+        </div>
+    </footer>
+    </div>
+    <script src="./js/vue.min.js"></script>
+    <script src="./js/axios.min.js"></script>
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/admin.js"></script>
+</body>
+</html>

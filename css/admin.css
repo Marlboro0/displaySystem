@@ -1,0 +1,88 @@
+*{
+    margin:0;
+    padding: 0;
+}
+header{
+    height:100px;
+    width:100%;
+    /* background: #ccc; */
+    border-bottom: 3px solid #000
+}
+header h1{
+    width: 400px;
+    height: 100%;
+    padding: 10px;
+    margin:0 auto;
+    line-height: 100px;
+}
+.body{
+    width:100%;
+    /* height:800px; */
+}
+.body .body_left{
+    /* background-color: aqua; */
+    height:100%;
+    font-size: 18px;
+    padding: 20px;
+}
+.body .body_left h4{
+    color: #000;
+    font-weight: 800;
+}
+.body .body_left #search{
+    height:30px;
+    margin: 28px 0 0 6px;
+}
+.body .body_left ul{
+    width:100%;
+    font-size: 18px;
+}
+/* .body .body_left ul li:nth-child(1){
+    margin-bottom: 20px;
+    cursor: default;
+} */
+.body .body_left ul li{
+    border-bottom: 1px solid #000;
+    /* cursor: pointer; */
+    padding: 10px 0;
+}
+.body .body_left ul li>div{
+    display: inline-block;
+    float: right;
+}
+.body .body_right{
+    /* background-color:peru; */
+    height:100%;
+    padding: 20px;
+    border-left: 2px solid #000;
+}
+.body .body_right h4{
+    font-weight: 600
+}
+.body .body_right .banner{
+    width:20%;
+    display: inline-block;
+}
+.body .body_right #wrap h3{
+   padding-left: 42%; 
+}
+.body .body_right #wrap hr{
+    size:6px;
+}
+.body .body_right #wrap input{
+    display:inline-block;
+}
+.body .body_right #wrap span{
+    font-size:16px;
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 18px;
+    cursor: pointer;
+}
+.body .body_right #wrap .core{
+    border: 1px solid #ccc;
+    padding: 6px;
+}
+.body .body_right #wrap .core div{
+    margin-top: 6px;
+}

@@ -1,0 +1,607 @@
+@charset "UTF-8";
+/*初始化  reset*/
+blockquote, body, button, dd, dl, dt, fieldset, form, h1, h2, h3, h4, h5, h6, hr, input, legend, li, ol, p, pre, td, textarea, th, ul {
+    margin: 0;
+    padding: 0
+}
+
+body, button, input, select, textarea {
+    font: 12px/1.5 "Microsoft YaHei", "微软雅黑", SimSun, "宋体", sans-serif;
+    color: #666;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+fieldset, img {
+    border: 0;
+    vertical-align: top;
+}
+
+a, input, button, select, textarea {
+    outline: none;
+}
+
+a, button {
+    cursor: pointer;
+}
+@font-face {
+    font-family: 'icomoon';
+    src:  url('../fonts/icomoon.eot?7kkyc2');
+    src:  url('../fonts/icomoon.eot?7kkyc2#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?7kkyc2') format('truetype'),
+    url('../fonts/icomoon.woff?7kkyc2') format('woff'),
+    url('../fonts/icomoon.svg?7kkyc2#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.w{
+    width:80%;
+    margin:0 auto;
+    position: relative;
+}
+/* 头部 */
+.header{
+    position: relative;
+    left:0;
+    top:0;
+    width: 100%;
+    height:60px;
+    line-height:60px;
+    background-color:#282830;
+}
+.header #hed_box{
+    position: relative;
+    float:left;
+    height: 60px;
+}
+
+.hed_lf{
+    position: relative;
+    left:0;
+    width: 25%;
+    margin-right:90px;
+    text-align: center;
+}
+.hed_lf h3{
+    height: 60px;
+    line-height: 60px;
+    width: 100%;
+    font-size: 30px;
+    text-align: center;
+    color:#fff;
+}
+.hed_lf .h_te a{
+    width: 50px;
+    height: 60px;
+    position: absolute;
+    left:0;
+    top:0px;
+}
+.hed_lf .h_te a img{
+    width: 100%;
+    height:100%;
+}
+.hed_md a,.hed_lf a,.hed_rt a{
+    font-size:18px;
+    font-weight: 700;
+    color:#fff;
+}
+.hed_md{
+    position: relative;
+    width:38%;
+    display: flex;
+    justify-content: space-between;
+    flex-flow: nowrap;
+}
+.hed_md div{
+    float:left;
+    text-align: center;
+    width: 16%;
+}
+.hed_rt{
+    margin-left: 10px;
+    width: 30%;
+}
+.hed_rt .hed_rts{
+    position: absolute;
+    right:0;
+    height: 60px;
+}
+.hed_rt .hed_rts div{
+    width:150px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    float:left;
+}
+.hed_rt_list ul{
+    display:none;
+    position: fixed;
+    width: 400px;
+    right:100px;
+    z-index: 999;
+    background-color:#282830;
+} 
+
+.hed_rt_list li{
+    float:left;
+    width: 160px;
+    height: 60px;
+    line-height: 60px;
+    margin-top:10px;
+    margin-left: 10px;
+} 
+
+/* 轮播图样式 */
+
+ #banner{
+	width:100%;
+	height:600px;
+	top:20px;
+	position:relative;
+    overflow:hidden;
+    border:1px solid #ccc;
+}
+#banner ul.carousel{
+	width:100%;
+	height:600px;
+	position:absolute;
+	top:0;
+	left:0;
+}
+#banner ul.carousel>li{
+	width:100%;
+	height:600px;
+	position:absolute;
+	top:0;
+	left:0;
+	transition:all .8s ease-in-out;
+    opacity:0;
+    color:black;
+}
+#banner ul.carousel>li>img{
+	width:100%;
+	height:600px;
+}
+#banner ul.carousel .img_show{
+	opacity:1;
+}
+#banner .arrow{
+	display:block;
+	width:46px;
+	height:100px;
+	position:absolute;
+    top:50%;
+    margin-top:-50px;
+	z-index:5;
+	border-radius:3px;
+	transition:opacity 0.4s linear;
+	/* opacity:0.3; */
+}
+#banner .lf{
+	left:0;
+	background:#fff url(../img/arrow_lf.png) no-repeat center;
+}
+#banner .rg{
+	right:0;
+	background:#fff url(../img/arrow_rg.png) no-repeat center;
+}
+#banner ul.indicators{
+	width:150px;
+	height:20px;
+	position:absolute;
+	bottom:20px;
+    left:50%;
+    margin-left:-75px;
+	z-index:5;
+}
+#banner ul.indicators>li{
+	width:14px;
+	height:14px;
+	float:left;
+	margin:3px;
+	box-sizing:border-box;
+	border-radius:7px;
+	background:#fff;
+	transition:all 0.2s linear;
+}
+.c_hover{
+	background:lightgreen !important;
+    width:22px !important; 
+}
+
+/* 项目描述
+*/
+.ms_detail{
+    position: relative;
+    left:0;
+    top:40px; 
+    width: 100%;
+    height: 400px;
+    text-align: center;
+    border:1px solid #ccc;
+}
+.ms_detail h3{
+    font-size:36px;
+    line-height:100px;
+    font-weight: normal;
+    text-align: center;
+}
+
+.ms_detail p{
+    font-size: 22px;
+    line-height: 50px;
+    margin:0 auto;
+    width:50%;
+    margin-top:3%;
+    text-align: center;
+}
+
+/* 项目总览 */
+.zonglan{
+    position: relative;
+    left:0;
+    top:60px;
+    width: 100%;
+    text-align: center;
+    border:1px solid #ccc;
+   
+}
+.zonglan h3{
+    font-size: 36px;
+    line-height:80px;
+    font-weight: normal;
+    text-align: center;
+}
+.bigScreen{
+    width: 100%;
+    overflow:hidden;
+}
+.zonglan #zl_box img{
+    width: 100%;
+    height:400px;
+    transition:transform 2s linear;
+}
+.zonglan #zl_box img:hover{
+    transform: scale(1.2);
+}
+.bsn_title{
+    width: 100%;
+    text-align: center;
+    position: relative;
+    bottom:20px;
+}
+ /* .bsn_title h3{
+     color:orange;
+    font-size: 22px;
+    line-height: 40px;
+    font-weight: normal;
+    text-align: center;
+    margin-top:30px;
+} */
+ .bsn_title p{
+    /* font-size: 20px;
+    text-align: center;
+    color:#666;
+    margin-bottom:10px; */
+    margin:0 auto;
+    margin-bottom: 10px;
+    color:orange;
+    font-size: 22px;
+    line-height: 40px;
+    font-weight: normal;
+    text-align: center;
+    margin-top:30px;
+    /* background-color: red; */
+}
+.bsn_title a{
+    font-size: 20px;
+    text-align: center;
+    color:#666;
+    color:rgb(69, 130, 228);
+    width: 150px;
+    height: 100px;
+    border:1px solid lightgray;
+}
+
+/* 具体构成模块 */
+.module_list {
+    position: relative;
+    top:80px;
+    width: 100%;
+    overflow: hidden;
+    border:1px solid #ccc;
+}
+.modList_header{
+    width: 100%;
+    height: 50px;
+    background-color: #666;
+}
+.modList_header ul li {
+    float: left;
+    width: 160px;
+    border-right:1px solid #fff;
+}
+.modList_header ul li {
+    float:left;
+    display: block;
+    /* width: 100%; */
+    height: 100%;
+    line-height: 50px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    color:#fff;
+    font-weight: 500;
+}
+.modList_header ul li.current {
+    background-color: lightgreen;
+    color: #fff;
+    font-weight: 700;
+}
+.modList_header ul li:hover{
+    cursor: pointer;
+}
+.modList_content{
+    width: 100%;
+    height: 600px;
+    margin-top:10px;
+    background-color: #fff;
+}
+.modList_content ul li {
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+}
+.modList_content li img {
+    width: 100%;
+    height: 600px;
+    transition:transform 2s linear;
+}
+.modList_content li img:hover{
+    transform:scale(1.2);
+}
+
+/* 核心功能 */
+.hexin{
+    position: relative;
+    left:0;
+    top:100px;
+    border:1px solid #ccc;
+}
+.hexin .hx_title h3{
+    font-size: 36px;
+    line-height:80px;
+    font-weight: normal;
+    text-align: center;
+}
+/* 旋转轮播图 */
+.wrap {
+    position: relative;
+    top:0px;
+    width:1200px;
+    margin: 50px auto;
+}
+.slide {
+    height: 600px;
+    position: relative;
+}
+.slide li {
+    position: absolute;
+    left: 100px;
+    top: 0;
+    text-align: center;
+    line-height: 600px;
+    width: 100%;
+    height: 500px;
+    color:#fff;
+    font-size: 33px;
+}
+
+.slide li img {
+    width: 100%;
+    height: 500px;
+}
+.arrow {
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    z-index: 1000;
+    width: 100%;
+}
+.prev, .next {
+    position: absolute;
+    z-index: 99;
+    line-height: 60px;
+    font-family: 'icomoon';
+    font-size: 60px;
+    color:#000;
+    opacity: 0.2;
+}
+.prev {
+    left: 0;
+    /* background: url(../img/prev.png) no-repeat; */
+}
+.next {
+    right:0;
+    /* background-image: url(../img/next.png); */
+}
+
+/* 功能描述 */
+.hx_detail{
+    position: relative;
+    top:0px;
+    width: 100%;
+    overflow:hidden;
+}
+.hx_detail .h_title h3{
+    font-size: 36px;
+    line-height:80px;
+    font-weight: 400 !important;
+    text-align: center;
+}
+.hx_detailContent{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-flow: wrap row;
+}
+.hx_detailContent .fun{
+    position: relative;
+    width:48%;
+    margin-bottom:20px;
+    text-align: center;
+    border:1px solid #ccc;
+}
+.hx_detailContent .fun div{
+    float:left;
+}
+.hx_detailContent .fun_img{
+    position: relative;
+    top:15%;
+    left:5%;
+    width: 10%;
+    height: 100%;
+    
+}
+/* .fun_img img {
+    width: 100%;
+    height: 100%;
+} */
+.fun .fun_ms{
+    width:60%;
+    text-align: left;
+    position: relative;
+    margin-left:25%;
+    bottom:5%;
+}
+.fun  .fun_ms h3{
+     color:orange;
+    font-size: 22px;
+    line-height: 40px;
+    font-weight: normal;
+    text-align: left;
+    margin-top:20px;
+}
+.fun  .fun_ms p{
+    font-size: 20px;
+    text-align: left;
+    text-indent: 2em;
+    color:gray;
+}
+.hx_detail img{
+    width: 200px;
+    height:200px;
+    border-radius: 50%;
+    transition:transform 0.5s linear;
+}
+.hx_detail img:hover{
+    transform:rotateY(180deg);;
+}
+
+
+/* 应用领域 */
+.useArea{
+    position: relative;
+    top:120px;
+    width: 100%;
+    border:1px solid #ccc;
+    
+}
+.useArea_title h3{
+    widows: 100%;
+    font-size: 36px;
+    line-height:80px;
+    font-weight: 400;
+    text-align: center;
+}
+.useArea_content{
+    display: flex;
+    justify-content: space-between;
+    flex-flow: wrap row;  
+    padding:10px;
+}
+.useArea_content #area_box{
+    margin-bottom: 20px;
+    margin-right: 10px;
+    position: relative;
+    width:24%;
+    text-align: center;
+    overflow:hidden;
+    /* float:left; */
+}
+.useArea h4{
+    font-size: 30px;
+    line-height:80px;
+    font-weight: 400;
+    text-align: center;
+    color:#fff;
+}
+.useArea img{
+    width: 200px;
+    height:200px;
+}
+
+/* 底部 */
+.footer {
+    clear: both; 
+    position: relative;
+    bottom:0;
+    left: 0;
+    top:140px;
+    width: 100%;
+	height: 200px;
+	background-color:#282830;
+    padding-top: 30px;
+    /* margin-top:140px; */
+}
+
+.ft_tab {
+	height:200px;
+    display: flex;
+    justify-content: space-between;
+    flex-flow: wrap row;
+}
+.ft_tab dl{
+    width: 30%;
+    margin:10px 20px;
+    /* background-color: red; */
+
+}
+.ft_list {
+	float: left;
+	width: 150px;
+    margin-right: 42px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+ .connect img{
+    width: 100px;
+    height: 50px;
+    margin-top:0px;
+    margin-bottom:20px;
+}
+.ft_list dt {
+	height: 25px;
+    font-size: 18px;
+    font-weight: 500;
+    color:#fff;
+}
+.ft_list dd {
+    height: 22px;
+    color:#fff;
+    font-size:14px;
+}
+
+.ft_list dd a {
+    color:#fff;
+    font-size: 14px;
+}

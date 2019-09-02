@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>深圳闻歌项目介绍</title>
+    <link rel="stylesheet" href="./css/admin.css">
+    <link href="https://cdn.bootcss.com/twitter-bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <header><h1>展示系统后台管理页面</h1></header>
+    <div class="row body" id="vmm">
+        <div class="col-md-3 body_left" >
+            <div style="display: flex">
+                <label for="">查询项目<input type="text" class="form-control" placeholder="输入你想查找的项目名" ref="selectPro"></label>
+                <button type="button" class="btn btn-success" id="search" @click="selectProByName">查询</button>
+            </div>
+            <hr>
+            <h4>添加项目</h4><button type="button" class="btn btn-success" @click="newPro">点击添加</button>
+            <hr>
+            <h4>项目列表</h4>
+            <ul>
+                <li v-for="(item,index) in nameList" :key="index">
+                    <span>{{item}}</span>
+                    <div>
+                        <button type="button" class="btn btn-success" id="edit" @click="changePro">编辑</button>
+                        <button type="button" class="btn btn-success" id="delete" @click="deleteProByName">删除</button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-9 body_right">
+            <h4>首页轮播图（1920*500）:</h4>
+            <input type="file" class="banner" id="indexSrc"  multiple/>
+            <button type="button" class="btn btn-info" @click="upindexSrc" >上传</button>
+            <hr>
+            <section id="wrap">
+                <h3>{{pro.name}}</h3>
+                项目名：<input type="text" class="form-control" placeholder="" v-model="pro.name"></label>
+                <hr>
+                项目链接地址：<input type="text" class="form-control" placeholder="" v-model="pro.link"></label>
+                <hr>
+                项目图标：</br><input type="file" class="" id="proIoc" @change="upIoc"/>
+                <hr>
+                首页-->项目文字概括（200字左右）：</br><textarea cols="150" rows="6" v-model="pro.generalize">在这里输入内容...</textarea><br>
+                <hr>
+                项目效果轮播图（1920*600）：</br><input type="file" class="" @change="upProSrc" id="proSrc" multiple/>
+                <hr>
+                项目总览(一张总设计图)（1536*600）：</br><input type="file" class="" @change="upOneSrc" id="oneSrc"/>
+                <hr>
+                项目具体模块 &nbsp;&nbsp;
+                <span class="glyphicon glyphicon-plus" @click="addModule"></span>
+                <span class="glyphicon glyphicon-minus" @click="deleteModule"></span>
+                <div id="moduleWrap" >
+                    <div class="core" v-for="(item,index) in pro.module" :key="index">
+                        <div><input type="checkbox" value="" class="check"></div>
+                        <div>具体模块名字：<input type="text" class=""  v-model="pro.module.moduleName"/></div>
+                        <div>项目模块图片（1536*600）：<input type="file"  class="" @change="upmoduleSrc" id="moduleSrc"/>
+                    </div>
+                </div>
+                <hr>
+                项目核心功能 &nbsp;&nbsp;
+                <span class="glyphicon glyphicon-plus" @click="addCore"></span>
+                <span class="glyphicon glyphicon-minus" @click="deleteCore"></span>
+                <div id="coreWrap" >
+                    <div class="core" v-for="(item,index) in pro.core" :key="index">
+                        <div><input type="checkbox" value="" class="check"></div>
+                        <div>核心功能名字：<input type="text" class=""  v-model="pro.core.coreName"/></div>
+                        <div>项目核心功能图标（300*300）：<input type="file"  class="" @change="upcoreIoc" id="coreIoc"/><br></div>
+                        <div>项目核心功能图片（600*400）：<input type="file"  class="" @change="upcoreSrc" id="coreSrc"/><br></div>
+                        <div>项目核心功能描述（200字左右）：</br><textarea cols="150" rows="6" v-model="pro.core.coreDetail">在这里输入内容...</textarea><br></div>
+                    </div>
+                </div>
+                <hr>
+                项目应用领域 &nbsp;&nbsp;
+                <span class="glyphicon glyphicon-plus" @click="addField"></span>
+                <span class="glyphicon glyphicon-minus" @click="deleteField"></span>
+                <div id="fieldWrap" >
+                    <div class="core" v-for="(item,index) in pro.field" :key="index">
+                        <div><input type="checkbox" value="" class="check"></div>
+                        <div>应用领域名字：<input type="text" class="" v-model="pro.field.fieldName"/></div>
+                        <div>应用领域图片（600*400）：<input type="file" id="pic_selector" class="" @change="upfieldSrc" id="fieldSrc"/><br></div>
+                        <div>应用领域描述（200字左右）：</br><textarea cols="150" rows="6" v-model="pro.field.fieldDetail">在这里输入内容...</textarea><br></div>
+                    </div>
+                </div>
+                <hr>
+                <button type="button" class="btn btn-info" @click="pushPro">上传该项目内容</button>
+                
+                
+            </section>
+            
+        </div>
+    </div>
+
+    <script src="./js/vue.min.js"></script>
+    <script src="./js/axios.min.js"></script>
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/admin.js"></script>
+</body>
+</html>
